@@ -1,0 +1,14 @@
+package com.hi.spring02;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ajaxController {
+	
+	@RequestMapping("movie")
+	public void name(String title, int price) {
+		System.out.println("ajax로 받은데이터"+title+""+price);
+		
+	}
+}

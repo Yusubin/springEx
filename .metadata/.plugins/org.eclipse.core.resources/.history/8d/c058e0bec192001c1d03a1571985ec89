@@ -1,0 +1,36 @@
+package com.hi.spring02;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductDAO {
+	@Autowired
+	SqlSessionTemplate my;
+	
+	public void create(MemberVO productVo) {
+			my.insert("product.create",productVo );
+	}
+	
+	public boolean login(MemberVO productVo) {
+		
+		return my.selectOne("product.login",productVo );
+	}
+	public MemberVO readOne(MemberVO productVo) {
+		return my.selectOne("product.one",productVo);
+		
+	}
+	public List<MemberVO> readAll() {
+		return my.selectList("product.all");
+	}
+	public void update(MemberVO productVo) {
+		my.update("product.up",productVo );
+	}
+	public void delete(MemberVO productVo) {
+		my.delete("product.del",productVo );
+	}
+	
+}

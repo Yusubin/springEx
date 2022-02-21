@@ -1,0 +1,10 @@
+package com.hi.spring02;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ajaxController {
+	
+	@RequestMapping("movie")
+	public void name() {}
+}

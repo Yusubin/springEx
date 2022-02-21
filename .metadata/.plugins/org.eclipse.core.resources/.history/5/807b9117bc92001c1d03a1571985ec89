@@ -1,0 +1,21 @@
+package com.hi.spring02;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class BbsDAO {
+	@Autowired
+	SqlSessionTemplate my;
+	
+	public int create (BbsVO vo) {
+		return my.insert("bbs.create",vo); //namespace.id, 가방
+	}
+	public int update (BbsVO vo) {
+		return my.insert("bbs.create",vo); //namespace.id, 가방
+	}
+	
+	public int selecte (BbsVO vo) {
+		return my.insert("bbs.create",vo); //namespace.id, 가방
+	}
+	
+}

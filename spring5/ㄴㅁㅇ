@@ -1,0 +1,7 @@
+-만약 테이블에 Product를 db에 만든경우
+	id, name, content, pricr
+-spring frame work에서 어떤 파일을만들어주어야할까. 
+1) product VO
+2) product DAO
+3) productMapping->config파일 추가 
+4) product Controller추가 

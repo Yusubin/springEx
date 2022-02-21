@@ -1,0 +1,6 @@
+package com.hi.spring02;
+
+@Controller
+public class ajaxController {
+
+}

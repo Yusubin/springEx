@@ -1,0 +1,19 @@
+package com.hi.spring02;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ProductController {
+	@Autowired
+	MemberDAO dao;
+	
+	@RequestMapping("create")
+	public void create(MemberVO vo) {
+		System.out.println("create요청");
+
+		dao.create(vo);
+	}
+}

@@ -1,0 +1,8 @@
+package com.hi.spring02;
+
+public class BbsVO {
+	private String id;
+	private String writer;
+	private String title;
+	private String contents;
+}

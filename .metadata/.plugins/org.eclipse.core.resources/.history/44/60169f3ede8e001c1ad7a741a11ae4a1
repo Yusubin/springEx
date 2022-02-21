@@ -1,0 +1,37 @@
+package com.hi.mvc02;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+
+public class MemberController {
+	@RequestMapping("create")
+	MemberDAO dao =new MemberDAO();
+	
+	public void create(MemberVO vo, MemberDAO dao) {
+		dao=this.dao;
+		System.out.println("create요청");
+//		1.입력한값 가져오기
+		System.out.println(vo);
+//		2. vo 만드러서 넣기
+//		3.dao한테 vo주면서 create요청
+
+		dao.create(vo);
+	}
+
+	@RequestMapping("del")
+	public void del(MemberVO vo, MemberDAO dao) {
+		dao=this.dao;
+		System.out.println("delete요청");
+		System.out.println(vo);
+		dao.delete(vo);
+	}
+
+	@RequestMapping("up")
+	public void up(MemberVO vo, MemberDAO dao) {
+		System.out.println("update요청");
+		System.out.println(vo);
+		dao.update(vo);
+	}
+}

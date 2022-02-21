@@ -1,0 +1,15 @@
+package com.hi.spring02;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ProductController {
+	@RequestMapping("product")
+	public void movie(String title, int price, Model model) {
+	
+		
+	}
+	
+}

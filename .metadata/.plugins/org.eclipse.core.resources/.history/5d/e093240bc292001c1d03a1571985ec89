@@ -1,0 +1,18 @@
+package com.hi.spring02;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ProductController {
+	@RequestMapping("movie")
+	public void movie(String title, int price, Model model) {
+		System.out.println("ajax로 받은데이터"+title+" "+price);
+		double price2=price*0.8;
+		model.addAttribute("title", title);
+		model.addAttribute("price2",(int)price2);
+		
+	}
+	
+}
