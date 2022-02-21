@@ -8,7 +8,7 @@
 		select * from BOOK
 	</select>
 	<select id="one" parameterType="bookVO" resultType="bookVO">
-		select * from MEMBER where id = #{id}
+		select * from BOOK where id = #{id}
 	</select>
 	<delete id="del"  parameterType="bookVO">
 		delete from BOOK  where id = #{id}
@@ -20,8 +20,8 @@
 	
 	
 	
-	<select id="check2" parameterType="memberVO" resultType="memberVO">
-		select id from MEMBER where id = #{id}
+	<select id="check2" parameterType="bookVO" resultType="bookVO">
+		select id from BOOK where id = #{id}
 	</select>
 	
 </mapper>

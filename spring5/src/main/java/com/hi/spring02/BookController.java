@@ -1,5 +1,6 @@
 package com.hi.spring02;
 
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,44 @@ public class BookController {
 	@Autowired
 	BookVAO dao;
 	
-	@RequestMapping("insert.do")
+	@RequestMapping("create")
 	public void insert(BookVO vo ,BookVAO bao) {
 		dao.create(vo);
 		
 		
 	}
+	@RequestMapping ("all2")
+	public void all (Model model) {
+		List<BookVO> list= dao.all();
+		model.addAttribute("list",list);
+	}
 	
-	
+	@RequestMapping ("one2")
+	public void one (BookVO vo, Model model) {
+		BookVO one = dao.read(vo);
+		model.addAttribute("one",one);
+		
+	}
+	@RequestMapping("del2")
+	public void del(BookVO vo) {
+		System.out.println("delete요청");
+		dao.delete(vo);
+	}
+
+	@RequestMapping("up2")
+	public String up(BookVO vo) {
+		//dao=this.dao;
+		System.out.println("update요청");
+		System.out.println(vo);
+		int result=dao.update(vo);
+		
+		if(result==0) {
+			//return "error";//views아래의 파일을 호출하는 경우
+			return "redirect:error.jsp";//Webapp아래의 파일을 호출하는 경우
+		}else {
+			return "up";
+		}
+	}
 	@RequestMapping("ajax1")
 	public void ajax1(String phone, Model model) {
 		System.out.println("ajax1호출");

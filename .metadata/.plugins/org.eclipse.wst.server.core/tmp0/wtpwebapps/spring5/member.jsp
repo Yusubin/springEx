@@ -8,6 +8,15 @@
 </head>
 <body>
 <img src="resources/img/sad.png">
+<h3>회원정보검색</h3>
+<form action="one">
+	id : <input type="text" name="id"><br> 
+	<button >조회</button>
+</form>
+<h3>회원전체검색</h3>
+<a href="all">
+	<button >조회</button>
+</a>
 <h3>회원가입</h3>
 <hr>
 <form action="insert">
