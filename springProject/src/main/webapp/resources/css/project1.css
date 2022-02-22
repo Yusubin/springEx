@@ -1,0 +1,112 @@
+@charset "UTF-8";
+td{
+	font: 20px bold; 
+	width: 200px;
+	text-align: center;
+	color:black;
+}
+
+
+.left{background: #6390bf;}
+input{
+	color:#0d1f40;
+	font: 18px bold;
+	background: white;
+}
+
+#total {
+	width: 800px;
+	height: 800px;
+	background-image: url(../img/back.png)
+}
+
+button{
+	color: white;
+	font: 20px 궁서 bold italic;
+	background-color: #0d1f40;
+	width:150px;
+}
+
+a{
+ 	text-decoration:none;
+	
+}
+
+a:visited{
+	/*마우스를 클릭하고나서*/
+	color:#3a4966;
+}
+a:hover{
+	/*마우스를 올렸을 떄*/
+	
+	color:black;
+	}
+button:hover{
+	background-color: gold;
+	
+}
+
+#top {
+	width: 800px;
+	height: 100px;
+	background: #6390bf;
+	display: table-cell;
+	vertical-align:middle;
+	padding-left:1px;  
+}
+
+#top2 {
+	border-top: 10px solid #0d1f40;
+	border-bottom: 10px double white;
+	box-shadow: 10px 10px #95b5e6;
+	border-radius: 100px 10px 10px 10px;
+	background: #2a6ba8;
+	color: #8586c7;
+	position: fixed;
+	top: 5px;
+	right:5px;
+	height: 100px;
+	width: 250px;
+}
+
+
+#content {
+	color: blue;
+	font: 25px  bold;
+}
+input{ width:150px; height:30px;}
+body {
+	color: blue;
+	font-size:20px;
+	font-weight:bold;
+}
+
+li {
+	list-style: none;
+	float: left;
+	padding: 15px;
+
+}
+
+li:hover {
+background:#1d3254
+}
+
+li:first-child {
+	border-radius: 20px 0 0 20px;
+}
+
+li:last-child {
+	border-radius: 0 20px 20px 0;
+}
+
+li:nth-child(2n) {
+	background: #b1d8fc;
+}
+
+li:nth-child(2n+1) {
+	/* 홀수 */
+	background: #85aed4;
+}
+
+td{ text-align:center; font-size:20px; }

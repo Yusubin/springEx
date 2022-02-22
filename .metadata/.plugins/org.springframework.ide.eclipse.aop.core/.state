@@ -6,4 +6,5 @@
 <aop-project name="spring02"/>
 <aop-project name="springEx"/>
 <aop-project name="spring04"/>
+<aop-project name="spring06"/>
 </aop-reference-model>
