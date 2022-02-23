@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="total">
+		<div id="top">
+			<jsp:include page="../../top.jsp"></jsp:include>
+		</div>
+		<div id="top2">
+			<jsp:include page="../../top2.jsp"></jsp:include>
+		</div>
+		<div id="center">
+			<h3>게시글 등록완료.</h3>
+			<hr>
+				<a href="bbs.jsp"><button>목록보기.</button></a>
+				<a href="write.jsp"><button>글쓰기.</button></a>
+				<a href="boardOne?id=${id}.jsp"><button> 글확인하러가기.</button></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.hi.mvcProject;
 
+
 public class BbsVO {
 	public String getId() {
 		return id;
@@ -19,14 +20,14 @@ public class BbsVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContents() {
-		return contents;
+	public String getContent() {
+		return content;
 	}
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	private String id;
 	private String writer;
 	private String title;
-	private String contents;
+	private String content;
 }

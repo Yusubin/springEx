@@ -9,23 +9,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductDAO {
 	@Autowired
-	SqlSessionTemplate my;
+	SqlSessionTemplate my; //의존성 주입(DI) 어떤 어노텐션쓰셧어요 저는 오토 와이어드요
 	
-	public void create(ProductVO productVo) {
-			my.insert("product.create",productVo );
-	}
+
 	public ProductVO readOne(ProductVO productVo) {
 		return my.selectOne("product.one",productVo);
 		
 	}
 	public List<ProductVO> readAll() {
-		return my.selectList("product.all");
+		return my.selectList("product.list");
 	}
-	public void update(ProductVO productVo) {
-		my.update("product.up",productVo );
-	}
-	public void delete(ProductVO productVo) {
-		my.delete("product.del",productVo );
-	}
+	
 	
 }

@@ -17,10 +17,23 @@ public class MemberController {
 	MemberDAO dao;
 	
 	@RequestMapping("insert")
-	public void create(MemberVO vo) {
+	public String create(MemberVO vo) {
 		System.out.println("create요청");
-		dao.create(vo);
+		int result =dao.create(vo);
+		if(result==1) {
+			return "ok";
+		}else {
+			return "insert";
+		}
+		
 	}
+
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:member.jsp";
+	}
+	
 
 	@RequestMapping("check")
 	public String login(MemberVO vo, HttpSession session) throws Exception {

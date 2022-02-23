@@ -6,9 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link 	type="text/css" 
-		rel="stylesheet" 
-		href="resources/css/project1.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="resources/css/project1.css">
 </head>
 <body>
 <div id="total">
@@ -18,7 +26,12 @@
 	<div id="top2">
 		<jsp:include page="../../top2.jsp"></jsp:include>
 	</div>
-	<div id="center"> 로그인 실패. 다시시작</div><hr>
+	
+	<div id="center"><div class="alert alert-info">
+		<strong>Fail!</strong> You should <a href="#" class="alert-link">로그인 실패. 다시시작</a>.
+	</div> </div>
+	
+	<hr>
 	<a href="member.jsp">로그인 페이지로.</a>
 </div>
 

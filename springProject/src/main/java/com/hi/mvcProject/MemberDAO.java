@@ -19,7 +19,13 @@ public class MemberDAO {
 	
 	//회원가입
 	public int create(MemberVO memberVo) {
-		return my.insert("member.create",memberVo );
+		int result=0;
+		try {
+			result=my.insert("member.create",memberVo );
+		}catch(Exception e) {
+			System.out.println("에러발생");
+		}
+		return result;
 	}
 	//로그인
 	public MemberVO login(MemberVO memberVo) {
