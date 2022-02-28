@@ -25,15 +25,15 @@ table, tr, td {
 		$('#commentBtn').click(function() {
 
 							$.ajax({
-								url : "comment",
+								url : "replyInsert",
 								data : {
-									comment : $('#comment').val(),
+									bbsid : ${one.id},
+									content : $('#comment').val(),
+									writer : "${userId}"
 								},
-								success : function(comment) {
-									$('#rd').append("<img src='resources/img/sad.png' width='20px' height='20px'>");
-									$('#rd').append(comment);
-									$('#rd').append("<br>");
-									$('#rd').append("<hr>");
+								success : function(result) {
+									$('#comment').val();
+									$('#commem').append(result);
 								},
 										error : function() {
 											alert('ajax실패 @');
@@ -63,10 +63,40 @@ table, tr, td {
 			}
 							
 		});
+		
+		$('#deltBtn').click(function() {
+			if(confirm("삭제하시겠습니까?")){
+				$.ajax({
+					url : "replyDelete",
+					data : {
+						id: ${one.id}
+					},
+					success : function(result) {
+						if(result==1){
+							location.href="bbs.jsp";
+						}
+					},
+					error : function() {
+						alert('ajax실패 @');
+
+					},
+				});
+			}
+							
+		});
 
 	});
 </script>
+<style>
+#commen {
+	text-align: left;
+}
 
+#commentBtn, #deltBtn {
+	font-size: 10px;
+	width: 80px;
+}
+</style>
 </head>
 <body>
 
@@ -79,7 +109,7 @@ table, tr, td {
 		</div>
 		<div id="center">
 
-			<h3>물건 상세 페이지</h3>
+			<h3>글 상세 페이지</h3>
 			<hr>
 			<table>
 				<tr>
@@ -97,21 +127,47 @@ table, tr, td {
 
 			</table>
 			<c:if test="${userName eq one.writer}">
-				 <a href="del?id=${one.id}.jsp">
-				<button id="delete">DELETE</button> </a> 
-				<a href="up2?id=${one.id}&content=${one.content}.jsp"><button>UPDATE</button></a>
-			<hr>
-					</c:if>
+				<a href="del?id=${one.id}.jsp">
+					<button id="delete">DELETE</button>
+				</a>
+				<a href="up2?id=${one.id}.jsp"><button>UPDATE</button></a>
+				<hr>
+			</c:if>
 			댓글
 			<!-- 로그인한사람과 작성자가 동일하면  
 				수정, 삭제 버튼을 나타나게해주자.세션값과 writer가 동일하면 %>-->
-				<!-- userId:세션 어트리뷰트  one.writer:모델 어트리뷰트. 둘다 어트리뷰트이므로...    -->
-			
-				<br>
-				<input type="text" name="comment" id="comment">
-				<button id="commentBtn">댓글달기</button>
-				<div id="rd"></div>
-	
+			<!-- userId:세션 어트리뷰트  one.writer:모델 어트리뷰트. 둘다 어트리뷰트이므로...    -->
+
+			<br>
+			<table id="commem">
+
+				<%
+					if (session.getAttribute("userId") != null) {
+				%>
+				<tr>
+					<td><input type="text" name="comment" id="comment"></td>
+					<td><button id="commentBtn">댓글달기</button></td>
+
+				</tr>
+				<%
+					}
+				%>
+				<c:forEach var="one" items="${list}">
+
+					<tr>
+						<td><img src="resources/img/reply.png" width=30>
+							${one.writer} : ${one.content}</td>
+
+						<c:if test="${userId eq one.writer}">
+							<td>
+								<a href="replyDelete?id=${one.id}&content=${one.content}.jsp"><button id="deltBtn">삭제</button></a>
+							</td>
+
+						</c:if>
+
+					</tr>
+				</c:forEach>
+			</table>
 			<div></div>
 		</div>
 	</div>

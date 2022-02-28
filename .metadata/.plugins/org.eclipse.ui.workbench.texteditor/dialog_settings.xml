@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="src"/>
+		<item key="selection" value="rate_info"/>
 		<list key="findhistory">
+			<item value="rate_info"/>
+			<item value="rate"/>
+			<item value="chart"/>
 			<item value="src"/>
 			<item value="&#x09;&#x09;&#x09;&lt;!— https://mvnrepository.com/artifact/mysql/mysql-connector-java —&gt;"/>
 		</list>

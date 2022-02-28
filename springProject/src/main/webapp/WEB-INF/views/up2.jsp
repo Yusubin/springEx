@@ -18,7 +18,7 @@
 			<h3>물건 상세 페이지</h3>
 			<hr>
 			<form action="up">
-				<input type="hidden" name="writer" value="${one.writer}">
+				<input type="hidden" name="id" value="${one.id}">
 				<table>
 					<tr>
 						<td class="left">제목</td>

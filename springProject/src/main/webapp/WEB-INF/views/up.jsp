@@ -15,8 +15,10 @@
 			<jsp:include page="../../top2.jsp"></jsp:include>
 		</div>
 		<div id="center">
-			<h3>업데이트완료</h3>
-			
+			<h3>업데이트문제 발생. </h3>
+			<hr>
+				<a href="bbs.jsp"><button>목록보기.</button></a>
+				<a href="write.jsp"><button>글쓰기.</button></a>
 </div></div>
 
 

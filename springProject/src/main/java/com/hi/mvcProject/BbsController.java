@@ -15,6 +15,8 @@ public class BbsController {
 	@Autowired
 	BbsDAO dao;
 	
+	@Autowired
+	ReplyDAO dao2;
 	
 	@RequestMapping("write")
 	public String create(BbsVO vo, HttpSession session, Model model) {
@@ -41,6 +43,9 @@ public class BbsController {
 	public void one (BbsVO vo, Model model) {
 		BbsVO vo2= dao.readOne(vo);
 		model.addAttribute("one", vo2);
+		
+		List<ReplyVO>list=dao2.list(vo);
+		model.addAttribute("list", list);
 	}
 	
 
@@ -55,9 +60,11 @@ public class BbsController {
 	}
 
 	@RequestMapping("up")
-	public void up(BbsVO vo) {
-		dao.update(vo);
+	public String up(BbsVO vo) {
+		int result = dao.update(vo);
 		System.out.println("update요청");
+		if(result==1) {return "up";}
+		else {return "no";}
 	}
 	
 	@RequestMapping("up2")
@@ -65,6 +72,7 @@ public class BbsController {
 		BbsVO one = dao.readOne(vo);
 		model.addAttribute("one",one);
 		System.out.println("update요청_");
+		
 	}
 	
 

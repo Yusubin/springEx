@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="reply">
+
+	<select id="list" parameterType="bbsVO" resultType="replyVO">
+		select *from reply where bbsid= #{id};
+	</select>
+	<insert id="create" parameterType="replyVO">
+		insert into reply values (null,#{bbsid},#{content},#{writer})	
+		<!-- read 빼고 //return은 무조건 int -->
+	</insert>
+	
+	<delete id="del"  parameterType="replyVO">
+		delete from reply where id = #{id}
+	</delete>
+	
+	
+
+</mapper>
