@@ -61,12 +61,15 @@
 			<jsp:include page="top2.jsp"></jsp:include>
 		</div>
 		<div id="center">
-			<h3>고객센터</h3>
+			<h3>고객센터
+				<div id="navii">
+					<div id="faqBtn">FAQ</div>
+					<div id="qnaBtn">QnA</div>
+				</div>
+			
+			</h3>
 			<hr>
-			<div id="navii">
-				<div id="faqBtn">FAQ</div>
-				<div id="qnaBtn">QnA</div>
-			</div>
+			
 
 			<div id="result"></div>
 

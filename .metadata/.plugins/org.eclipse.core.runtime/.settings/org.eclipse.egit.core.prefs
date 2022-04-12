@@ -1,4 +1,7 @@
-GitRepositoriesView.GitDirectories=C\:\\Users\\hi\\asdasd\\.git;
-GitRepositoriesView.GitDirectories.relative=.git;
+GitRepositoriesView.GitDirectories=C\:\\Users\\hi\\asdasd\\.git;C\:\\Users\\hi\\project\\ShoppingMallPre\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;C\:\\Users\\hi\\project\\ShoppingMallPre\\.git;
+RepositorySearchDialogDeepSearch=true
+RepositorySearchDialogSearchPath=C\:\\git
+RepositorySearchDialogSkipHidden=false
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
