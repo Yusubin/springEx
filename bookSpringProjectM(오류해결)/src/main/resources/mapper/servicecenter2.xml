@@ -26,7 +26,7 @@
 		where serviceIdx=#{serviceIdx}
 	</update>
 	
-		<update id="number" parameterType="service2VO">
+	<update id="number" parameterType="service2VO">
 		update servicecenter2 set serviceIdOrigin = serviceIdx where serviceIdxRe =0
 	</update>
 
